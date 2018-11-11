@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  redis:
+    image: redis:5-alpine
+  producer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: producer
+    environment:
+      STREAM_NAME: mystream
+  consumer1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: consumer
+    environment:
+      STREAM_NAME: mystream
+      CONSUMER_GROUP: mygroup
+      CONSUMER_NAME: consumer1
+  consumer2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: consumer
+    environment:
+      STREAM_NAME: mystream
+      CONSUMER_GROUP: mygroup
+      CONSUMER_NAME: consumer2
+  console:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: console
+    environment:
+      STREAM_NAME: mystream
+      CONSUMER_GROUP: mygroup

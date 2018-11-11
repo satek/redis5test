@@ -1,0 +1,23 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    coderay (1.1.2)
+    hiredis (0.6.3)
+    method_source (0.9.1)
+    pry (0.12.0)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    rake (12.3.1)
+    redis (4.0.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  hiredis (>= 0.6.3)
+  pry (>= 0.12.0)
+  rake (>= 12.3.1)
+  redis (>= 4.0.3)
+
+BUNDLED WITH
+   1.17.1
